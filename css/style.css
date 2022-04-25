@@ -6,7 +6,7 @@
     text-decoration: none;
 }
 :root{
-    --mainColor:blue;
+    --mainColor:rgb(0, 123, 255);
 }
 html{
     scroll-behavior: smooth;
@@ -364,12 +364,18 @@ section{
     width: 100%;
     background-color: lightgray;
     border-radius: 10px;
+    overflow: hidden;
 }
-.skills .skills-content .right .progres-line span{
+.skills .skills-content .right .progres-line .tzad{
     position: absolute;
     height:100%;
     background-color: var(--mainColor);
     border-radius: 10px;
+    top: 0;
+    left: 0;
+    width: 0;
+    display: block;
+    transition: width 0.5s ease-in-out;
 }
 /*----------------- --------contact styling----------------------------- */
 .contact .title{

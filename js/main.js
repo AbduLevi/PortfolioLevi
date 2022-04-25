@@ -5,6 +5,9 @@ let icon = document.getElementById("menu");
 let icon1 = document.getElementById("menu1");
 let social = document.querySelector('.social');
 let btn1 = document.querySelector('.btn');
+let right = document.querySelector(".pro");
+let spans = document.querySelectorAll(".tzad");
+
 window.onscroll = function () 
 {
     if (scrollY > 40) {
@@ -16,6 +19,7 @@ window.onscroll = function ()
         icon1.classList.remove('hide1');
     }
 }
+
 btn.addEventListener('click',function(){
     if(icon.getAttribute('class') === 'fa-solid fa-bars'){
         icon.setAttribute('class','fa-solid fa-xmark');
@@ -26,9 +30,23 @@ btn.addEventListener('click',function(){
         nav.classList.remove("active");
     }
 });
+
 btn1.addEventListener('click',function(){
     social.classList.toggle('hide');
 });
+
 icon1.onclick = function(){
     window.scroll(0,0);
 }
+
+window.addEventListener("scroll", () => {
+  if (document.documentElement.scrollTop >= right.offsetTop) {
+    spans.forEach((spans) => {
+      spans.style.width = spans.getAttribute("data-width");
+    });
+  } else {
+    spans.forEach((spans) => {
+      spans.style.width = 0;
+    });
+  }
+});
